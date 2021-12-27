@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>Map Test</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+	<script src="https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.js"></script>
+	<script
+		src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.2/mapbox-gl-geocoder.min.js"></script>
+	<script async defer src="https://api.mapbox.com/mapbox-assembly/v1.3.0/assembly.js"></script>
+	<link rel="stylesheet"
+		href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.2/mapbox-gl-geocoder.css"
+		type="text/css">
+	<link href="https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.css" rel="stylesheet">
+	<link href="https://api.mapbox.com/mapbox-assembly/v1.3.0/assembly.min.css" rel="stylesheet">
+	<link href="styles.css" rel="stylesheet">
+</head>
+
+<body>
+	<style>
+
+	</style>
+
+	<div id="map" class="absolute"></div>
+
+	<!-- <div id="menu" class="absolute">
+		See a list of Mapbox-hosted public styles at
+		https://docs.mapbox.com/api/maps/styles/#mapbox-styles
+		<label class="radio-container" for="satellite-v9">
+			<input id="satellite-v9" type="radio" name="rtoggle" value="satellite">
+			<div class="radio mx6"></div>
+			Satellite
+		</label>
+		<label class="radio-container" for="light-v10">
+			<input id="light-v10" type="radio" name="rtoggle" value="light">
+			<div class="radio mx6"></div>
+			Light
+		</label>
+		<label class="radio-container" for="dark-v10">
+			<input id="dark-v10" type="radio" name="rtoggle" value="dark">
+			<div class="radio mx6"></div>
+			Dark
+		</label>
+		<label class="radio-container" for="streets-v11">
+			<input id="streets-v11" type="radio" name="rtoggle" value="streets" checked="checked">
+			<div class="radio mx6"></div>
+			Streets
+		</label>
+		<label class="radio-container" for="outdoors-v11">
+			<input id="outdoors-v11" type="radio" name="rtoggle" value="outdoors">
+			<div class="radio mx6"></div>
+			Outdoors
+		</label>
+	</div> -->
+	<div class="inline-flex flex--column">
+		<div class="relative fl mt24 mb6 mx24 py24 px24 bg-gray-faint round align-center">
+			<form id="params">
+				<h4 class="txt-m txt-bold mb6">Choose a travel mode:</h4>
+				<div class="mb12 mr12 toggle-group align-center">
+					<label class="toggle-container">
+						<input name="profile" type="radio" value="walking">
+						<div class="toggle toggle--active-null toggle--null">Walking</div>
+					</label>
+					<label class="toggle-container">
+						<input name="profile" type="radio" value="cycling" checked>
+						<div class="toggle toggle--active-null toggle--null">Cycling</div>
+					</label>
+					<label class="toggle-container">
+						<input name="profile" type="radio" value="driving">
+						<div class="toggle toggle--active-null toggle--null">Driving</div>
+					</label>
+				</div>
+				<h4 class="txt-m txt-bold mb6">Choose a maximum duration:</h4>
+				<div class="mb12 mr12 toggle-group align-center">
+					<label class="toggle-container">
+						<input name="duration" type="radio" value="10" checked>
+						<div class="toggle toggle--active-null toggle--null">10 min</div>
+					</label>
+					<label class="toggle-container">
+						<input name="duration" type="radio" value="20">
+						<div class="toggle toggle--active-null toggle--null">20 min</div>
+					</label>
+					<label class="toggle-container">
+						<input name="duration" type="radio" value="30">
+						<div class="toggle toggle--active-null toggle--null">30 min</div>
+					</label>
+				</div>
+			</form>
+		</div>
+
+		<div class="relative fl mx24 py12 px12 bg-gray-faint round bottom wmax300 opacity0" id="address">
+			<h4 class="txt-truncate txt-bold reverse-gc-address align-left"></h4>
+			<h4 class="txt-truncate reverse-gc-address align-left"></h4>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="map.js"></script>
+	<script type="text/javascript" src="isochrone.js"></script>
+</body>
+
+</html>
